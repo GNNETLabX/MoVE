@@ -1,0 +1,57 @@
+Dataset: collab, Alpha: 0
+Results: {'train_auc_mean': 0.9807836972933437, 'train_auc_std': 0.0, 'val_auc_mean': 0.9611342591208804, 'val_auc_std': 0.0, 'test_auc_mean': 0.9589854193291363, 'test_auc_std': 0.0}
+
+Dataset: collab, Alpha: 0.01
+Results: {'train_auc_mean': 0.9452082103163487, 'train_auc_std': 0.0, 'val_auc_mean': 0.9334996203992086, 'val_auc_std': 0.0, 'test_auc_mean': 0.8746313409887965, 'test_auc_std': 0.0}
+
+Dataset: collab, Alpha: 0
+Results: {'train_auc_mean': 0.9807836972933437, 'train_auc_std': 0.0, 'val_auc_mean': 0.9611342591208805, 'val_auc_std': 0.0, 'test_auc_mean': 0.9589854193291363, 'test_auc_std': 0.0}
+
+Dataset: collab, Alpha: 0.01
+Results: {'train_auc_mean': 0.9177235470402475, 'train_auc_std': 0.0, 'val_auc_mean': 0.8898021891308636, 'val_auc_std': 0.0, 'test_auc_mean': 0.8682553040796902, 'test_auc_std': 0.0}
+
+Dataset: collab, Alpha: 0.001
+Results: {'train_auc_mean': 0.7667115590922354, 'train_auc_std': 0.0, 'val_auc_mean': 0.7398060748082569, 'val_auc_std': 0.0, 'test_auc_mean': 0.7424355891000488, 'test_auc_std': 0.0, 'train_acc_mean': 0.5, 'train_acc_std': 0.0, 'val_acc_mean': 0.5, 'val_acc_std': 0.0, 'test_acc_mean': 0.5, 'test_acc_std': 0.0}
+
+Dataset: yelp, Alpha: 0.001
+Results: {'train_auc_mean': 0.8306668428181626, 'train_auc_std': 0.0, 'val_auc_mean': 0.8433812201655928, 'val_auc_std': 0.0, 'test_auc_mean': 0.8412679336087516, 'test_auc_std': 0.0, 'train_acc_mean': 0.5076205305596957, 'train_acc_std': 0.0, 'val_acc_mean': 0.5082644628099173, 'val_acc_std': 0.0, 'test_acc_mean': 0.5085343060583795, 'test_acc_std': 0.0}
+
+Dataset: act, Alpha: 0.001
+Results: {'train_auc_mean': 0.8590895443112212, 'train_auc_std': 0.0, 'val_auc_mean': 0.8638809080085836, 'val_auc_std': 0.0, 'test_auc_mean': 0.8816687972614049, 'test_auc_std': 0.0, 'train_acc_mean': 0.5133146513962044, 'train_acc_std': 0.0, 'val_acc_mean': 0.5109355929274273, 'val_acc_std': 0.0, 'test_acc_mean': 0.5206336446393325, 'test_acc_std': 0.0}
+
+Dataset: collab_04, Alpha: 0.001
+Results: {'train_auc_mean': 0.8033790534537152, 'train_auc_std': 0.0, 'val_auc_mean': 0.8136755165972038, 'val_auc_std': 0.0, 'test_auc_mean': 0.7968950648029816, 'test_auc_std': 0.0, 'train_acc_mean': 0.5, 'train_acc_std': 0.0, 'val_acc_mean': 0.5, 'val_acc_std': 0.0, 'test_acc_mean': 0.5, 'test_acc_std': 0.0}
+
+Dataset: collab, Alpha: 0.001
+Results: {'train_auc_mean': 0.7667115590922354, 'train_auc_std': 0.0, 'val_auc_mean': 0.7398060748082568, 'val_auc_std': 0.0, 'test_auc_mean': 0.7424358173855335, 'test_auc_std': 0.0, 'train_acc_mean': 0.7976388476560363, 'train_acc_std': 0.0, 'val_acc_mean': 0.7246994963320297, 'val_acc_std': 0.0, 'test_acc_mean': 0.7536154531104229, 'test_acc_std': 0.0}
+
+Dataset: yelp, Alpha: 0.001
+Results: {'train_auc_mean': 0.7066372679685939, 'train_auc_std': 0.0, 'val_auc_mean': 0.680896113653439, 'val_auc_std': 0.0, 'test_auc_mean': 0.6680064654823247, 'test_auc_std': 0.0, 'train_acc_mean': 0.6647197269380533, 'train_acc_std': 0.0, 'val_acc_mean': 0.6232388808973104, 'val_acc_std': 0.0, 'test_acc_mean': 0.6091301394603174, 'test_acc_std': 0.0}
+
+Dataset: act, Alpha: 0.001
+Results: {'train_auc_mean': 0.8920778211647585, 'train_auc_std': 0.0, 'val_auc_mean': 0.894433022442702, 'val_auc_std': 0.0, 'test_auc_mean': 0.884484984909804, 'test_auc_std': 0.0, 'train_acc_mean': 0.8904118574978521, 'train_acc_std': 0.0, 'val_acc_mean': 0.8901543814324002, 'val_acc_std': 0.0, 'test_acc_mean': 0.8825954323870158, 'test_acc_std': 0.0}
+
+Dataset: collab, Alpha: 0.001
+Results: {'train_auc_mean': 0.7934015783132594, 'train_auc_std': 0.05338003844204793, 'val_auc_mean': 0.7535207226164358, 'val_auc_std': 0.02742929561635811, 'test_auc_mean': 0.759348213561931, 'test_auc_std': 0.033825014204011634, 'train_acc_mean': 0.8157585461374849, 'train_acc_std': 0.035973852444908846, 'val_acc_mean': 0.7388223263363913, 'val_acc_std': 0.02834113441447313, 'test_acc_mean': 0.7644443164384919, 'test_acc_std': 0.021639365997532935}
+
+Dataset: yelp, Alpha: 0.001
+Results: {'train_auc_mean': 0.7128276714256503, 'train_auc_std': 0.004346470917555991, 'val_auc_mean': 0.6887894724859414, 'val_auc_std': 0.0053151895563481105, 'test_auc_mean': 0.6763724074864863, 'test_auc_std': 0.00666273683458012, 'train_acc_mean': 0.6691315072224303, 'train_acc_std': 0.0031572062921475528, 'val_acc_mean': 0.6285593029779261, 'val_acc_std': 0.0037962753747276977, 'test_acc_mean': 0.6156500436976307, 'test_acc_std': 0.0053766081630477955}
+
+Dataset: act, Alpha: 0.001
+Results: {'train_auc_mean': 0.8920778211647586, 'train_auc_std': 1.1102230246251565e-16, 'val_auc_mean': 0.8944337668595754, 'val_auc_std': 6.078138319518053e-07, 'test_auc_mean': 0.8844850184405649, 'test_auc_std': 7.50536254410789e-08, 'train_acc_mean': 0.8904533373512082, 'train_acc_std': 0.0001391486776850304, 'val_acc_mean': 0.8901870594646105, 'val_acc_std': 3.301863904309395e-05, 'test_acc_mean': 0.8825969057366363, 'test_acc_std': 4.979845824398274e-06}
+
+Dataset: collab_04, Alpha: 0.001
+Results: {'train_auc_mean': 0.886691946857448, 'train_auc_std': 1.9416904197761633e-08, 'val_auc_mean': 0.9073316219639169, 'val_auc_std': 1.0376267955969354e-08, 'test_auc_mean': 0.8957327625245682, 'test_auc_std': 7.741840942004517e-09, 'train_acc_mean': 0.877479143732983, 'train_acc_std': 9.374909205354238e-07, 'val_acc_mean': 0.9006311852821932, 'val_acc_std': 1.5862651426798385e-06, 'test_acc_mean': 0.8900877498483191, 'test_acc_std': 1.3029071789965292e-06}
+
+Dataset: collab_06, Alpha: 0.001
+Results: {'train_auc_mean': 0.8939691872253169, 'train_auc_std': 2.793643978580245e-08, 'val_auc_mean': 0.9082776142151274, 'val_auc_std': 1.1528610229059074e-07, 'test_auc_mean': 0.8968306214820814, 'test_auc_std': 4.1095860431363474e-08, 'train_acc_mean': 0.8861634472124423, 'train_acc_std': 4.54041031640546e-06, 'val_acc_mean': 0.9020213886315369, 'val_acc_std': 3.1978126391946582e-06, 'test_acc_mean': 0.8902901472663789, 'test_acc_std': 6.166921225022013e-06}
+
+Dataset: collab_08, Alpha: 0.001
+Results: {'train_auc_mean': 0.9054541893730953, 'train_auc_std': 2.20922001490593e-08, 'val_auc_mean': 0.919540515331818, 'val_auc_std': 3.828141410303403e-08, 'test_auc_mean': 0.8965531543298733, 'test_auc_std': 7.222020149884429e-09, 'train_acc_mean': 0.8985380563760261, 'train_acc_std': 3.199736440945769e-06, 'val_acc_mean': 0.9133835119760733, 'val_acc_std': 3.3404936958923074e-06, 'test_acc_mean': 0.8903626549680841, 'test_acc_std': 3.843308618958706e-07}
+
+Dataset: collab, Alpha: 0.0001
+Results: {'train_auc_mean': 0.978233608771826, 'train_auc_std': 0.0, 'val_auc_mean': 0.9445992073218119, 'val_auc_std': 0.0, 'test_auc_mean': 0.9453891561059388, 'test_auc_std': 0.0, 'train_acc_mean': 0.9746470284615971, 'train_acc_std': 0.0, 'val_acc_mean': 0.9329766623466589, 'val_acc_std': 0.0, 'test_acc_mean': 0.9378722670729538, 'test_acc_std': 0.0}
+
+Dataset: collab, Alpha: 0.0001
+Results: {'train_auc_mean': 0.9759169188502772, 'train_auc_std': 0.0, 'val_auc_mean': 0.9566029614839701, 'val_auc_std': 0.0, 'test_auc_mean': 0.9504407146242434, 'test_auc_std': 0.0, 'train_acc_mean': 0.9720207465874029, 'train_acc_std': 0.0, 'val_acc_mean': 0.9466964031216784, 'val_acc_std': 0.0, 'test_acc_mean': 0.9432292983819547, 'test_acc_std': 0.0}
+
