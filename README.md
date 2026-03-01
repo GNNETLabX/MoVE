@@ -1,12 +1,10 @@
 # Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts
 
-This repository contains the official implementation of the paper
-“Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts”.
+This repository contains the official implementation of the paper "Mitigating Dynamic Graph Distribution Shifts via Mixture of Variational Experts".
 
-##  Requirements
+## Requirements
 
-Main dependencies:
-
+**Main dependencies:**
 - CUDA == 10.1
 - Python == 3.8.12
 - PyTorch == 1.9.1
@@ -17,19 +15,49 @@ To install all required packages, run the following command in the project root 
 ```bash
 pip install -r requirements.txt
 ```
+
+
+## Datasets
+
+MoVE supports dynamic link prediction on both discrete-time and continuous-time dynamic graphs.  
+All datasets can be downloaded here:  
+https://1drv.ms/u/c/1b2f69874f634cd8/IQBXefaMKTWIRpRCbaCs9byhAcH5yc1bYAgkN-7RyrfPZTE?e=RbBokn
+
+Once downloaded, please organize the datasets into the following directories based on their type:
+
+### Discrete-time dynamic graph datasets
+(collab, yelp, act, collab_04, collab_08)
+
+Place these in: MoVE_discrete_graph/data/
+
+### Continuous-time dynamic graph datasets
+(Review, Reddit, UNtrade, UNvote)
+
+Place these in: MoVE_continuous_graph/processed_data/
+
+
+---
+
 ## Training
 
-MoVE supports dynamic link prediction on both discrete-time and continuous-time dynamic graphs.
+### Continuous-Time Dynamic Graphs
 
-**Example 1: Train MoVE on the Amazon_review dataset**
+Example of training MoVE on the Reddit dataset:
 
 ```bash
-python train_continues.py --dataset_name AmazonReview --num_experts 4 --batch_size 200 --num_runs 5 --gpu 0
+cd MoVE_continuous_graph
+python train_link_prediction.py --dataset_name reddit --model_name MoVE --patch_size 2 --num_runs 5 --gpu 0
 ```
-**Example 2: Train MoVE on the COLLAB dataset**
+
+### Discrete-Time Dynamic Graphs
+
+Example of running MoVE on the Collab dataset:
+
 ```bash
-python train_discrete.py --dataset_name COLLAB --load_best_configs --num_experts 4 --num_runs 5
+cd MoVE_discrete_graph/scripts
+python main.py --mode=eval --use_cfg=1
 ```
+
 ## Acknowledgement
 
 We sincerely appreciate the following github repo very much for the valuable code base and datasets:

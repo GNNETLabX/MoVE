@@ -50,6 +50,7 @@ def get_link_prediction_args(is_evaluation: bool = False):
                         help='strategy for the negative edge sampling')
     parser.add_argument('--alpha', type=float, default=0.0001, help='param of align loss')
     parser.add_argument('--beta', type=float, default=1.0, help='param of KL loss')
+    parser.add_argument('--k', type=int, default=3, help='number of pseudo-environments')
 
     parser.add_argument('--load_best_configs', action='store_true', default=False, help='whether to load the best configurations')
 

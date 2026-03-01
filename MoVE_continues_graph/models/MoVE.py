@@ -13,17 +13,13 @@ EPS = 1e-15
 MAX_LOGSTD = 10
 MIN_LOGSTD = -10
 
-# parameter
-alpha = 0.0001
-beta = 1.0
-env_lr = 0.001
 
 class MoVE(nn.Module):
 
     def __init__(self, node_raw_features: np.ndarray, edge_raw_features: np.ndarray, neighbor_sampler: NeighborSampler,
                  time_feat_dim: int, channel_embedding_dim: int, patch_size: int = 1, num_layers: int = 2,
                  num_heads: int = 2,
-                 dropout: float = 0.1, max_input_sequence_length: int = 512, device: str = 'cpu'):
+                 dropout: float = 0.1, k: int = 3, max_input_sequence_length: int = 512, device: str = 'cpu'):
         """
         DyGFormer model.
         :param node_raw_features: ndarray, shape (num_nodes + 1, node_feat_dim)
@@ -71,7 +67,7 @@ class MoVE(nn.Module):
         })
 
         self.num_channels = 3
-        self.num_experts = 3
+        self.num_experts = k
 
         self.transformer = TransformerEncoder(attention_dim=self.num_channels * self.channel_embedding_dim,
                                               num_heads=self.num_heads, dropout=self.dropout)
