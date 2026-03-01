@@ -143,8 +143,6 @@ class MergeMultiplyPredictor(torch.nn.Module):
         self.fc2 = nn.Linear(input_dim2, hidden_dim)
         self.act = nn.ReLU()
     def forward(self, z, e):
-        # x_i = self.act(self.fc1(z[e[0]]))
-        # x_j = self.act(self.fc2(z[e[1]]))
         x_i = self.act(z[e[0]])
         x_j = self.act(z[e[1]])
         x_merged = x_i * x_j
@@ -404,7 +402,8 @@ class VGAE_MoE(GAE):
         z_aggregated = torch.sum(expert_outputs_tensor * gating_weight, dim=1)
 
         n = z_aggregated.shape[0]
-        z_aggregated = F.normalize(z_aggregated.view(n, self.args.n_factors, self.args.delta_d), dim=2).view(z_aggregated.shape[0], z_aggregated.shape[1])
+        if self.args.normalize:
+            z_aggregated = F.normalize(z_aggregated.view(n, self.args.n_factors, self.args.delta_d), dim=2).view(z_aggregated.shape[0], z_aggregated.shape[1])
 
         ref = expert_outputs[0]
         others = torch.stack(expert_outputs[1:], dim=0)

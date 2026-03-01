@@ -4,6 +4,8 @@ import json
 import warnings
 import torch.optim as optim
 from tqdm import tqdm
+sys.path.append("..")
+
 from models.config import args
 from models.utils.mutils import *
 from models.utils.data_util import *
@@ -13,7 +15,6 @@ from models.MoVE import VGAE, VGAE_MoE, GCNEncoder
 from models.MoVE_runner import Runner
 from models.utils.evaluation import evaluate, train_evaluate
 
-sys.path.append("..")
 
 warnings.simplefilter("ignore")
 
