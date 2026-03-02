@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "--dataset",
     type=str,
-    default="yelp",
+    default="act",
     help="collab, yelp, act, collab_04, collab_06, collab_08",
 )
 parser.add_argument("--num_nodes", type=int, default=-1, help="num of nodes")
@@ -32,6 +32,7 @@ parser.add_argument(
     default=5e-7,
     help="weight for L2 loss on basic models",
 )
+parser.add_argument("--output_folder", type=str, default="", help="need to be modified")
 parser.add_argument(
     "--sampling_times", type=int, default=1, help="negative sampling times"
 )
@@ -51,7 +52,7 @@ parser.add_argument("--nbsz", type=int, default=10, help="number of sampling nei
 parser.add_argument("--maxiter", type=int, default=4, help="number of iteration")
 parser.add_argument("--dropout", type=float, default=0.4, help="dropout rate")
 parser.add_argument(
-    "--alpha", type=float, default=0.00005, help="parameter of alignment loss"
+    "--alpha", type=float, default=0.0001, help="parameter of alignment loss"
 )
 parser.add_argument("--normalize", type=bool, default=1, help="normalize z")
 parser.add_argument("--beta", type=float, default=0.1, help="parameter of regularization loss")
@@ -60,8 +61,9 @@ parser.add_argument("--gamma_std", type=float, default=0.9, help="regulate the d
 parser.add_argument("--k", type=int, default=5, help="number of augmentation branches")
 parser.add_argument("--env_lr", type=float, default=0.0001, help="learning rate of environment estimator weight")
 parser.add_argument("--lr", type=float, default=0.0001, help="learning rate of main model weight")
-parser.add_argument("--num_runs", type=int, default=1, help="number of runs")
+parser.add_argument("--num_runs", type=int, default=3, help="number of runs")
 parser.add_argument("--dim", type=int, default=32, help="dim")
+
 
 args = parser.parse_args()
 
@@ -85,13 +87,17 @@ if args.use_cfg:
             "n_factors": 4,
             "delta_d": 8,
             "nbsz": 32,
+            "lr": 0.0005,
+            "normalize": 1
         }
         setargs(args, hp)
     if args.dataset == "yelp":
         hp = {
-            "n_factors": 4,
+             "n_factors": 4,
             "delta_d": 8,
             "nbsz": 32,
+            "normalize": 1,
+            "max_epoch": 90
         }
         setargs(args, hp)
     elif args.dataset == "act":
@@ -99,6 +105,7 @@ if args.use_cfg:
             "n_factors": 4,
             "delta_d": 8,
             "nbsz": 32,
+            "normalize": 1
         }
         setargs(args, hp)
     elif args.dataset == "collab_04":
@@ -107,10 +114,7 @@ if args.use_cfg:
             "delta_d": 16,
             "nbsz": 32,
             "dim": 64,
-            "normalize": 0,
-            "lr": 0.00006,
-            "env_lr": 0.0002
-
+            "normalize": 0
         }
         setargs(args, hp)
     elif args.dataset == "collab_06":
@@ -119,9 +123,7 @@ if args.use_cfg:
             "delta_d": 16,
             "nbsz": 32,
             "dim": 64,
-            "normalize": 0,
-            "lr": 0.00006,
-            "env_lr": 0.0002
+            "normalize": 0
         }
         setargs(args, hp)
     elif args.dataset == "collab_08":
@@ -130,9 +132,6 @@ if args.use_cfg:
             "delta_d": 16,
             "nbsz": 32,
             "dim": 64,
-            "normalize": 0,
-            "lr": 0.00006,
-            "env_lr": 0.0002
-
+            "normalize": 0
         }
         setargs(args, hp)

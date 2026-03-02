@@ -143,6 +143,8 @@ class MergeMultiplyPredictor(torch.nn.Module):
         self.fc2 = nn.Linear(input_dim2, hidden_dim)
         self.act = nn.ReLU()
     def forward(self, z, e):
+        # x_i = self.act(self.fc1(z[e[0]]))
+        # x_j = self.act(self.fc2(z[e[1]]))
         x_i = self.act(z[e[0]])
         x_j = self.act(z[e[1]])
         x_merged = x_i * x_j
@@ -194,6 +196,7 @@ class GCNEncoder(nn.Module):
         in_channels = self.in_dim
         out_channels = self.in_dim
         hidden_channels = 4 * in_channels
+        self.conv1 = GCNConv(in_channels, hidden_channels)
         self.conv_mu = GCNConv(in_channels, out_channels)
         self.conv_logvar = GCNConv(in_channels, out_channels)
 

@@ -7,7 +7,7 @@ from models.utils.inits import prepare
 
 def evaluate(args, runner, num_runs):
     all_train_auc, all_val_auc, all_test_auc = [], [], []
-    all_train_acc, all_val_acc, all_test_acc = [], [], []
+    all_train_ap, all_val_ap, all_test_ap = [], [], []
 
     for runs in range(num_runs):
         data = runner.data["test"]
@@ -18,7 +18,7 @@ def evaluate(args, runner, num_runs):
         runner.model.eval()
 
         train_auc_list, val_auc_list, test_auc_list = [], [], []
-        train_acc_list, val_acc_list, test_acc_list = [], [], []
+        train_ap_list, val_ap_list, test_ap_list = [], [], []
 
         for i in range(runner.len):
             embeddings, _, _ = runner.model.encode(runner.x[i], data['edge_index_list'][i].long().to(args.device))
@@ -32,23 +32,23 @@ def evaluate(args, runner, num_runs):
 
                 if i < runner.len_train - 1:
                     train_auc_list.append(auc)
-                    train_acc_list.append(ap)
+                    train_ap_list.append(ap)
                 elif i < runner.len_train + runner.len_val - 1:
                     val_auc_list.append(auc)
-                    val_acc_list.append(ap)
+                    val_ap_list.append(ap)
                 else:
                     test_auc_list.append(auc)
-                    test_acc_list.append(ap)
+                    test_ap_list.append(ap)
 
         all_train_auc.append(np.mean(train_auc_list))
         all_val_auc.append(np.mean(val_auc_list))
         all_test_auc.append(np.mean(test_auc_list))
 
-        all_train_acc.append(np.mean(train_acc_list))
-        all_val_acc.append(np.mean(val_acc_list))
-        all_test_acc.append(np.mean(test_acc_list))
+        all_train_ap.append(np.mean(train_ap_list))
+        all_val_ap.append(np.mean(val_ap_list))
+        all_test_ap.append(np.mean(test_ap_list))
         print('train_auc:', all_train_auc, 'val_auc:', all_val_auc, 'test_auc:', 'all_test_auc', all_test_auc)
-        print('train_acc:', all_train_acc, 'val_acc:', all_val_acc, 'test_acc:', 'all_test_acc', all_test_acc)
+        print('train_ap:', all_train_ap , 'val_ap:', all_val_ap, 'test_ap:', 'all_test_ap', all_test_ap)
 
     results = {
         # AUC
@@ -59,13 +59,13 @@ def evaluate(args, runner, num_runs):
         "test_auc_mean": np.mean(all_test_auc),
         "test_auc_std": np.std(all_test_auc),
 
-        # ACC
-        "train_acc_mean": np.mean(all_train_acc),
-        "train_acc_std": np.std(all_train_acc),
-        "val_acc_mean": np.mean(all_val_acc),
-        "val_acc_std": np.std(all_val_acc),
-        "test_acc_mean": np.mean(all_test_acc),
-        "test_acc_std": np.std(all_test_acc),
+        # AP
+        "train_ap_mean": np.mean(all_train_ap),
+        "train_ap_std": np.std(all_train_ap),
+        "val_ap_mean": np.mean(all_val_ap),
+        "val_ap_std": np.std(all_val_ap),
+        "test_ap_mean": np.mean(all_test_ap),
+        "test_ap_std": np.std(all_test_ap),
     }
 
     df = pd.DataFrame([results])
